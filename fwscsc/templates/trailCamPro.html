@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}野聲環境 | {{trailCamPro.brand}} {{trailCamPro.ab}}{% endblock %}
+{% block content %}
+
+<br><br>
+
+<body>
+    <section>
+        <div class="d-flex flex-wrap container align-items-center">
+            <div id="openCam" class="position-relative">
+                <img id="closed" src="{{trailCamPro.proImg.url}}" alt="{{trailCamPro.ab}}" style="max-width: 400px;">
+                <img id="opened" class="position-absolute top-0 start-0" src="{{trailCamPro.proImgOpen.url}}"
+                    alt="trailCamPro.ab" style="width: 400px;">
+            </div>
+            <div class="m-5" style="max-width: 800px;">
+                <h2 class="fw-bold">{{trailCamPro.brand}} {{trailCamPro.modelName}}</h2>
+                <br>
+                <h4 class="fw-lighter" style="color: #D48000;">{{trailCamPro.briefIntro}}</h4>
+                <br>
+                <p class="lh-lg fw-lighter">{{trailCamPro.intro}}</p>
+                <br>
+                <a href="{% url 'contact'%}"><button style="background-color: #D48000; border: none;" type="button"
+                        class="btn btn-primary google-sheet py-2 px-3">聯絡我們</button></a>
+                <p class="lh-lg fw-lighter mt-3" style="color: rgb(148, 148, 148);">購買產品請與我們聯絡，野聲專員會盡快與您聯絡</p>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br>
+
+    <section>
+        <div class="container">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button fs-5 pro-accordion rounded" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
+                            相關配件
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+
+                            {% for i in trailCamPro.acc.all %}
+                            <div class="card border-light m-5" style="max-width: 1000px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="{{i.img.url}}" alt="{{i}}" style="max-width: 250px;">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body m-5">
+                                            <h4 class="fw-lighter" style="color: #D48000;">{{i}}</h4>
+                                            <br>
+                                            <p class="lh-lg fw-lighter">{{i.intro}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed fs-5 pro-accordion rounded" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            產品規格
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <table class="table table-striped table-hover m-5">
+                                <tr>
+                                    <td class="fw-bold">照片解析度</td>
+                                    <td class="fw-lighter">{{trailCamPro.imgRes}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">影片解析度</td>
+                                    <td>{{trailCamPro.vedRes}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">影片長度</td>
+                                    <td>{{trailCamPro.vedLen}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">同時感應拍照錄影</td>
+                                    <td>{{trailCamPro.hybridMode}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">顯示螢幕</td>
+                                    <td>{{trailCamPro.screen}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">感應距離</td>
+                                    <td>{{trailCamPro.detRan}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">夜間捕光</td>
+                                    <td>{{trailCamPro.illumination}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">補光距離</td>
+                                    <td>{{trailCamPro.illRan}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">反應速度</td>
+                                    <td>{{trailCamPro.triSpe}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">智能調節影片長度</td>
+                                    <td>{{trailCamPro.SmartIR}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">影像色彩</td>
+                                    <td>{{trailCamPro.imaCol}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">連拍張數</td>
+                                    <td>{{trailCamPro.mulShoPerTri}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">連拍速度</td>
+                                    <td>{{trailCamPro.mulShoRat}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">資料戳記</td>
+                                    <td>{{trailCamPro.infoBar}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">感應延遲</td>
+                                    <td>{{trailCamPro.deley}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">工作時間設定</td>
+                                    <td>{{trailCamPro.opeTim}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">工作時間設定</td>
+                                    <td>{{trailCamPro.opeTim}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">快門設定</td>
+                                    <td>{{trailCamPro.shuSet}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">感光度設定</td>
+                                    <td>{{trailCamPro.isoSet}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">定時攝影</td>
+                                    <td>{{trailCamPro.timLapSet}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">定時攝影間隔</td>
+                                    <td>{{trailCamPro.timLapInt}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">記憶卡</td>
+                                    <td>{{trailCamPro.cardType}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">記憶卡支援最大容量</td>
+                                    <td>{{trailCamPro.carCap}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">記憶卡設定檔功能</td>
+                                    <td>{{trailCamPro.memCon}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">電池續航力</td>
+                                    <td>{{trailCamPro.batLif}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">電池數量及類型</td>
+                                    <td>{{trailCamPro.batTypQua}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">相機工作環境溫度</td>
+                                    <td>{{trailCamPro.opeTem}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">客製對焦距離</td>
+                                    <td>{{trailCamPro.focAdj}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed fs-5 pro-accordion rounded" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                            aria-controls="collapseThree">
+                            範例影片
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div>
+
+                            <div class="d-flex flex=wrap p-4">
+                                <div class="m-4">
+                                    <div class="card-body">
+                                        <h3>日間範例影像</h3>
+                                    </div>
+                                    <iframe width="560" height="315" src="{{trailCamPro.demoVedioDay}}"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen class="rounded"></iframe>
+                                </div>
+
+                                <div class="m-4">
+                                    <div class="card-body">
+                                        <h3>夜間範例影像</h3>
+                                    </div>
+                                    <iframe width="560" height="315" src="{{trailCamPro.demoVedioNight}}"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen class="rounded"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+<br><br><br>
+
+{% endblock %}

@@ -1,0 +1,6 @@
+{
+  "python.formatting.provider": "yapf",
+  "python.pythonPath": "c:\\Users\\user20725\\python_venv\\fws_django\\fws_django\\Scripts\\python.exe",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": { "editor.defaultFormatter": null }
+}

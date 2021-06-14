@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}野聲環境｜器材產品{% endblock %}
+{% block content %}
+
+<body>
+
+    <section>
+        <div class="brand-ctn position-fixed">
+            <div class=" brand-bg rounded p-2" style="width: 210px;">
+                <a href="#tc" class="brand-link">紅外線自動相機</a>
+            </div>
+            <div class=" brand-bg rounded p-2" style="width: 210px;">
+                <a href="#ag" class="brand-link">代理品牌</a>
+            </div>
+            {% for i in brands %}
+            <div class=" brand-bg rounded p-2" style="width: 210px;">
+                <a href="#{{i.id}}" class="brand-link">
+                    {{i.brand}}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <div class=" container">
+            <div class="container my-5 text-center">
+                <h1 id="tc">紅外線自動相機</h1>
+                <br>
+                <h4 style="color: #D48000;">台灣最大的紅外線自動相機代理商</h4>
+            </div>
+            <div class="container my-5">
+                <p class="lead lh-lg">
+                    當動物經過紅外線自動相機，觸發紅外線感應器後相機自動起動錄影。夜間光線不足時自動起動LED補光燈，在晚上也能拍出清晰的影像。當沒有動物的時候，自動相機會進入待機模式，延長電池續航力。非常適合做為野生動物調查的利器，可節省人力和經費、大幅度提高調查的努力量、提高發現動物的機率，特別是針對非常敏感的動物。
+                    <br><br>
+                    我們有超過十年的紅外線相機使用經驗，提供完整的產品諮詢以及售後服務。
+                </p>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class='container'>
+            <div class="text-center">
+                <h1 id="ag">代理品牌</h1>
+            </div>
+            <div class="p-3">
+                <div class="d-flex align-items-center flex-wrap justify-content-between">
+                    {% for i in brands %}
+                    <div class="m-4" style="max-width: 350px;">
+                        <a href="#{{i.id}}"><img src="{{i.brandImg.url}}" alt="trialCamLogo"
+                                class="img-fluid brand-img" /></a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <br><br><br><br>
+
+    <section>
+        <div class="container">
+            {% for i,j in classifiedProd.items %}
+            <div>
+                <br>
+                <div class="d-flex flex-wrap justify-content-between">
+                    <div class="text-center" style="max-width: 1000px; ">
+                        <h1 id="{{i.id}}" class="fw-bolder">{{i.title}}</h1>
+                        <h4>{{i.subTitle}}</h4>
+                        <br>
+                        <h4 class="fw-lighter" style="color: #D48000;">{{i.slogan}}</h4>
+                    </div>
+                    <div style="max-width: 300px;">
+                        <img src="{{i.brandImg.url}}" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <p class="lh-lg fs-5 fw-lighter">{{i.des}}</p>
+                </div>
+                <br>
+                <div class="d-flex flex-wrap justify-content-evenly align-items-end">
+                    {% for k in j %}
+                    <div class="text-center">
+                        <div class="position-relative">
+                            <a href="/trailCam/{{k.id}}">
+                                <div class="pro-link">
+                                    <button type="button" class="btn fs-5 pro-link-b">產品資訊</button>
+                                </div>
+                            </a>
+                            <img src="{{k.proImg.url}}" class="card-img-top m-4" alt="{{k.ab}}"
+                                style="max-width: 230px;">
+                        </div>
+
+                        <div class="card-body">
+                            <a href="/trailCam/{{k.id}}" style="text-decoration: none; color: black;">
+                                <h4>{{k.modelName}}</h4>
+                            </a>
+                            <p style="color: #D48000;" class="lh-lg fs-5 fw-lighter">
+                                {{k.des1}}<br>{{k.des2}}<br>{{k.des3}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
+    <h1>{{trailCamPro.id}}</h1>
+
+</body>
+
+{% endblock %}

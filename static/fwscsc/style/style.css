@@ -1,0 +1,261 @@
+* {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav a.navbar-brand {
+  margin: 1rem;
+}
+
+nav div ul {
+  margin: 1rem;
+}
+
+nav div ul a {
+  color: #7a7a7a !important;
+  -webkit-transition: all 0.5s ease !important;
+  transition: all 0.5s ease !important;
+}
+
+nav div ul a.active {
+  color: #d48000 !important;
+}
+
+a.nav-link:hover {
+  color: #d48000 !important;
+}
+
+section.first div.carousel-item {
+  width: 100%;
+  height: 40vw;
+  overflow: hidden;
+}
+
+section.first div.carousel-item img {
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+button.carousel-control-next {
+  height: 40vw;
+}
+
+button.carousel-control-prev {
+  height: 40vw;
+}
+
+section.second {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+section.second div.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+  padding: 2rem;
+}
+
+section.second div.card h5.card-title {
+  color: #d48000;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+footer {
+  background-color: #ffd595;
+}
+
+footer div.container ul li a {
+  color: white;
+}
+
+span.my-copyright {
+  color: #999999;
+  font-size: small;
+}
+
+.featurette-divider {
+  margin: 5rem 0;
+  /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  color: #7a7a7a;
+  /* rtl:remove */
+  letter-spacing: -0.05rem;
+}
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+img#muntjac {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 60% bottom;
+     object-position: 60% bottom;
+}
+
+img#boss {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 60% bottom;
+     object-position: 60% bottom;
+}
+
+a.google-sheet {
+  color: white !important;
+}
+
+h5.my-card-active {
+  color: #d48000;
+}
+
+h5.my-card {
+  color: #7a7a7a;
+}
+
+div.bg-mytheme {
+  background-color: #d48000;
+}
+
+span.text-muted {
+  color: #d48000 !important;
+}
+
+div.pro-link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+div.pro-link:hover {
+  background-color: rgba(78, 78, 78, 0.3);
+  border-radius: 0.3rem;
+  -webkit-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+
+button.pro-link-b {
+  z-index: 100;
+  position: relative;
+  top: 65%;
+  color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+button.pro-link-b:hover {
+  color: white !important;
+  background-color: #d48000;
+  z-index: 100;
+}
+
+a.brand-link {
+  font-size: 20px;
+  margin-left: 3rem;
+  text-decoration: none;
+  color: #9e9e9e;
+}
+
+div.brand-bg {
+  width: 13rem;
+}
+
+div.brand-bg:hover {
+  background-color: rgba(255, 230, 190, 0.7);
+  -webkit-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+
+@media screen and (max-width: 1600px) {
+  div.brand-ctn {
+    display: none;
+  }
+}
+
+div.openCam {
+  z-index: 100;
+  color: black;
+}
+
+img.opened {
+  opacity: 0;
+}
+
+img#opened {
+  opacity: 0;
+}
+
+div#openCam:hover img#closed {
+  opacity: 0;
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+div#openCam:hover img#opened {
+  opacity: 1;
+  -webkit-transition: all ease-in  0.15s;
+  transition: all ease-in  0.15s;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white !important;
+  background-color: #d48000 !important;
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: white !important;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0) !important;
+          box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0) !important;
+}
+
+.accordion-collapse {
+  border: white !important;
+}
+
+.accordion-button {
+  border: 0px;
+}
+
+.pro-accordion {
+  width: 10rem !important;
+}
+
+.brand-img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all ease-in 0.03s;
+  transition: all ease-in 0.03s;
+}
+/*# sourceMappingURL=style.css.map */

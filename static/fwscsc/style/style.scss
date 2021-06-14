@@ -1,0 +1,272 @@
+* {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+// 主題色、要用橘色的話就用這個橘
+// 另外用這個灰色搭配
+$theme-color: #d48000;
+$grey-color: #7a7a7a;
+
+nav {
+  display: flex;
+  a.navbar-brand {
+    margin: 1rem;
+  }
+  div {
+    ul {
+      margin: 1rem;
+      a {
+        color: rgb(122, 122, 122) !important;
+        transition: all 0.5s ease !important;
+      }
+      a.active {
+        color: $theme-color !important;
+      }
+    }
+  }
+}
+
+a.nav-link:hover {
+  color: $theme-color !important;
+}
+
+// 設定圖片縮放，並且不要讓他變形
+section.first {
+  div.carousel-item {
+    width: 100%;
+    height: 40vw;
+    overflow: hidden;
+    img {
+      width: 100%;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+// 預設的button會多出來一點點
+button.carousel-control-next {
+  height: 40vw;
+}
+button.carousel-control-prev {
+  height: 40vw;
+}
+
+section.second {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  div.card {
+    display: flex;
+    border: none;
+    padding: 2rem;
+    h5.card-title {
+      color: $theme-color;
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
+  }
+}
+
+footer {
+  background-color: #ffd595;
+  div.container {
+    ul {
+      li {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// 產品連結
+
+
+span.my-copyright {
+  color: rgb(153, 153, 153);
+  font-size: small;
+}
+
+// 以下是範本抄來的css
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  color: $grey-color;
+  /* rtl:remove */
+  letter-spacing: -0.05rem;
+}
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+// 關於野聲頁面
+img#muntjac {
+  object-fit: cover;
+  object-position: 60% bottom;
+}
+
+img#boss {
+  object-fit: cover;
+  object-position: 60% bottom;
+}
+
+a.google-sheet {
+  color: white !important;
+}
+
+h5.my-card-active {
+  color: $theme-color;
+}
+
+h5.my-card {
+  color: $grey-color;
+}
+
+div.bg-mytheme {
+  background-color: $theme-color;
+}
+
+span.text-muted {
+  color: #d48000 !important;
+}
+
+div.pro-link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+div.pro-link:hover {
+  background-color: rgba(78, 78, 78, 0.3);
+  border-radius: 0.3rem;
+  transition: all 150ms ease-in;
+}
+
+button.pro-link-b {
+  z-index: 100;
+  position: relative;
+  top: 65%;
+  color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+button.pro-link-b:hover {
+  color: white !important;
+  background-color: rgba(212, 128, 0, 1);
+  z-index: 100;
+}
+
+a.brand-link {
+  font-size: 20px;
+  margin-left: 3rem;
+  text-decoration: none;
+  color: rgb(158, 158, 158);
+}
+
+div.brand-bg {
+  width: 13rem;
+}
+
+div.brand-bg:hover {
+  background-color: rgba(255, 230, 190, 0.7);
+  transition: all 150ms ease-in;
+}
+
+@media screen and (max-width: 1600px) {
+  div.brand-ctn {
+      display: none;
+  }
+}
+
+// img.openCam {
+//   opacity: 0;
+// }
+
+// img.openCam:hover {
+//   opacity: 1;
+//   transition: all ease-in 0.15s;
+
+// }
+
+div.openCam {
+  z-index: 100;
+  color: black;
+}
+
+img.opened {
+  opacity: 0;
+}
+
+img#opened {
+  opacity: 0;
+}
+
+div#openCam:hover img#closed {
+  opacity: 0;
+  transition-delay: 0.05s;
+}
+
+div#openCam:hover img#opened {
+  opacity: 1;
+  transition: all ease-in  0.15s;
+}
+
+// .accordion-buttonL:focus {
+//   box-shadow: #ffd595 !important;
+
+
+// }
+.accordion-button:not(.collapsed) {
+  color: white !important;
+  background-color: #d48000 !important;
+  // background-color: #ffd595 !important;
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: white !important;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, 0) !important;
+}
+
+.accordion-collapse {
+  border: white !important;
+}
+
+.accordion-button {
+  border: 0px;
+}
+
+.pro-accordion {
+  width: 10rem !important;
+}
+
+.brand-img:hover {
+  transform: scale(1.1);
+  transition: all ease-in 0.03s;
+}

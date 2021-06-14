@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title %}野聲環境｜聯絡我們{% endblock %}
+{% block content %}
+
+<body>
+  <section id="first" class="mb-5">
+    <div class="overflow-hidden ratio ratio-21x9">
+      <img id="muntjac" src="{% static 'fwscsc//img/contact/20190927-CDC_5804.jpeg'%}" class="img-fluid" alt="serow">
+    </div>
+  </section>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-auto p-5 m-4 text-white rounded" style="background-color :#D48000;">
+        <h2>聯絡資訊</h2>
+        <br>
+        <h4>地址</h4>
+        <p>苗栗縣竹南鎮仁愛路645巷16號</p>
+        <br>
+        <h4>電話</h4>
+        <p>市話：037-582503</p>
+        <p>節費電話：07010000271</p>
+        <br>
+        <h4>E-mail</h4>
+        <p>詢價：fwscsc.info@gmail.com</p>
+        <p>售後服務：fwscsc.rp@gmail.com</p>
+
+      </div>
+      <div class="col-lg-8 m-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1812.2564719144023!2d120.90185190420081!3d24.709264425413547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34684ca9bbe0f075%3A0xc803f59693e0e7dc!2z6YeO6IGy55Kw5aKD55Sf5oWL6aGn5ZWP5pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1622974116089!5m2!1szh-TW!2stw"
+          width=100% height=100% style="border:0;" allowfullscreen="" loading="lazy" class="rounded"></iframe>
+      </div>
+    </div>
+
+    <br>
+    <div class="container my-5 text-center">
+      <h1>詢價訂購或諮詢</h1>
+      <br>
+      <h4 style="color: #D48000;">請利用這個google問卷提交表單，我們的業務人員會在短時間內回覆您</h4>
+      <br>
+      <a href="https://forms.gle/2w9hbjbi68BiuZTA9"><button style="background-color: #D48000; border: none;"
+          type="button" class="btn btn-primary google-sheet">Google 表單</button></a>
+      <br>
+      <br>
+      <div class="ratio ratio-1x1">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScMNTO7kk3pmEpL8RgthpwBjT07_-hZKJNerf-MWIuLJkQWcQ/viewform?embedded=true"
+          width="640" height="1170" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+      </div>
+    </div>
+  </div>
+  </section>
+
+</body>
+
+<br>
+
+{% endblock %}
