@@ -29,9 +29,9 @@ def trailCam(request):
     trailCamPro = TrailCamPro.objects.all()
     classifiedProd = {}
     for i in trailCamPro:
-        if i.brand not in classifiedProd.keys():
-            classifiedProd[i.brand] = []
-        classifiedProd[i.brand].append(i)
+        if i.brand_id not in classifiedProd:
+            classifiedProd[i.brand_id] = []
+        classifiedProd[i.brand_id].append(i)
 
     return render(request, 'trailCam.html', {'brands':brands, 'classifiedProd':classifiedProd, 'trailCamPro':trailCamPro})
 

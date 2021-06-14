@@ -64,7 +64,7 @@
 
     <section>
         <div class="container">
-            {% for i,j in classifiedProd.items %}
+            {% for i in brands %}
             <div>
                 <br>
                 <div class="d-flex flex-wrap justify-content-between">
@@ -84,7 +84,7 @@
                 </div>
                 <br>
                 <div class="d-flex flex-wrap justify-content-evenly align-items-end">
-                    {% for k in j %}
+                    {% for k in classifiedProd[i.id] %}
                     <div class="text-center">
                         <div class="position-relative">
                             <a href="/trailCam/{{k.id}}">
