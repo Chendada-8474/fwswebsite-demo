@@ -79,8 +79,6 @@ class TrailCamPro(md.Model):
     demoVedioDay = md.URLField('Youtube link of demo vedio in daytime', null=True)
     demoVedioNight = md.URLField('Youtube link of demo vedio at night', null=True)
     acc = md.ManyToManyField(Accessories, blank=True)
-    dayIframeTag = md.TextField(max_length=2000, null=True)
-    nightIframeTag = md.TextField(max_length=2000, null=True)
 
 
     def __str__(self) -> str:
