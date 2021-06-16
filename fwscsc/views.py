@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView, DetailView
-from .models import Brands, TrailCamPro, Supplier, Accessories
+from .models import Brands, Department, TrailCamPro, Supplier, Accessories, Recruitment, Department
 
 # Create your views here.
 
@@ -13,7 +13,15 @@ def about(request):
 
 
 def recruitment(request):
-    return render(request, 'recruitment.html', {})
+    recruitment = Recruitment.objects.all()
+    department = Department.objects.all()
+    classifiedRec = {}
+    for i in recruitment:
+        if i.department not in classifiedRec.keys():
+            classifiedRec[i.department] = []
+        classifiedRec[i.department].append(i)
+    return render(request, 'recruitment.html',
+    {'recruitment':recruitment, 'department':department, 'classifiedRec':classifiedRec})
 
 
 def support(request):
@@ -41,3 +49,5 @@ def trailCam(request):
 def trailCamPro(request, id):
     trailCamPro = TrailCamPro.objects.get(id = id)
     return render(request, 'trailCamPro.html', {'trailCamPro': trailCamPro})
+
+

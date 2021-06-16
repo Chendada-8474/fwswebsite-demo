@@ -1,22 +1,33 @@
 * {
   font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 // 主題色、要用橘色的話就用這個橘
 // 另外用這個灰色搭配
 $theme-color: #d48000;
 $grey-color: #7a7a7a;
+html {
+  overflow: visible;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+}
 
 nav {
   display: flex;
+  // z-index: 9999;
+  // width: 100%;
   a.navbar-brand {
     margin: 1rem;
   }
   div {
     ul {
-      margin: 1rem;
       a {
-        color: rgb(122, 122, 122) !important;
+        text-decoration: none;
+        color: rgb(122, 122, 122);
         transition: all 0.5s ease !important;
       }
       a.active {
@@ -269,4 +280,16 @@ div#openCam:hover img#opened {
 .brand-img:hover {
   transform: scale(1.1);
   transition: all ease-in 0.03s;
+}
+
+html {
+  min-height: 100%;
+  body {
+    min-height: 100%;
+  }
+}
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
 }

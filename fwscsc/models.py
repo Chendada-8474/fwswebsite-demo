@@ -86,3 +86,19 @@ class TrailCamPro(md.Model):
     def __str__(self) -> str:
         return str(self.brand) + " " + self.ab
 
+class Department(md.Model):
+    department = md.TextField(max_length=15, null=True)
+
+    def __str__(self) -> str:
+        return self.department
+
+class Recruitment(md.Model):
+    department = md.ForeignKey(Department, on_delete=md.CASCADE, blank=True, null=True)
+    position = md.CharField(max_length=20, null=True)
+    salary = md.CharField(max_length=50, null=True)
+    briefIntro = md.CharField(max_length=20, null=True)
+    aboutJob = md.TextField(max_length=500 ,null=True)
+    condition = md.TextField(max_length=500 ,null=True)
+
+    def __str__(self) -> str:
+        return str(self.department) + " " + self.position

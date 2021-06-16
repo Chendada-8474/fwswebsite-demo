@@ -1,5 +1,15 @@
 * {
   font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: visible;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 nav {
@@ -12,12 +22,9 @@ nav a.navbar-brand {
   margin: 1rem;
 }
 
-nav div ul {
-  margin: 1rem;
-}
-
 nav div ul a {
-  color: #7a7a7a !important;
+  text-decoration: none;
+  color: #7a7a7a;
   -webkit-transition: all 0.5s ease !important;
   transition: all 0.5s ease !important;
 }
@@ -257,5 +264,19 @@ div#openCam:hover img#opened {
           transform: scale(1.1);
   -webkit-transition: all ease-in 0.03s;
   transition: all ease-in 0.03s;
+}
+
+html {
+  min-height: 100%;
+}
+
+html body {
+  min-height: 100%;
+}
+
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
