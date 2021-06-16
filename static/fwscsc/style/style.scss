@@ -293,3 +293,9 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+@media screen and (max-width: 800px) {
+  .youtube-for-mobile {
+      width: 100%;
+  }
+}

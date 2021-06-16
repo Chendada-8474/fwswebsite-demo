@@ -7,22 +7,25 @@
 
 <body>
     <section>
-        <div class="d-flex flex-wrap container align-items-center">
-            <div id="openCam" class="position-relative">
-                <img id="closed" src="{{trailCamPro.proImg.url}}" alt="{{trailCamPro.ab}}" style="max-width: 400px;">
-                <img id="opened" class="position-absolute top-0 start-0" src="{{trailCamPro.proImgOpen.url}}"
-                    alt="trailCamPro.ab" style="width: 400px;">
-            </div>
-            <div class="m-5" style="max-width: 800px;">
-                <h2 class="fw-bold">{{trailCamPro.brand}} {{trailCamPro.modelName}}</h2>
-                <br>
-                <h4 class="fw-lighter" style="color: #D48000;">{{trailCamPro.briefIntro}}</h4>
-                <br>
-                <p class="lh-lg fw-lighter">{{trailCamPro.intro}}</p>
-                <br>
-                <a href="{% url 'contact'%}"><button style="background-color: #D48000; border: none;" type="button"
-                        class="btn btn-primary google-sheet py-2 px-3">聯絡我們</button></a>
-                <p class="lh-lg fw-lighter mt-3" style="color: rgb(148, 148, 148);">購買產品請與我們聯絡，野聲專員會盡快與您聯絡</p>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center">
+                <div id="openCam" class="position-relative">
+                    <img id="closed" src="{{trailCamPro.proImg.url}}" alt="{{trailCamPro.ab}}"
+                        style="max-width: 400px;">
+                    <img id="opened" class="position-absolute top-0 start-0" src="{{trailCamPro.proImgOpen.url}}"
+                        alt="trailCamPro.ab" style="width: 400px;">
+                </div>
+                <div class="m-5" style="max-width: 800px;">
+                    <h2 class="fw-bold">{{trailCamPro.brand}} {{trailCamPro.modelName}}</h2>
+                    <br>
+                    <h4 class="fw-lighter" style="color: #D48000;">{{trailCamPro.briefIntro}}</h4>
+                    <br>
+                    <p class="lh-lg fw-lighter">{{trailCamPro.intro}}</p>
+                    <br>
+                    <a href="{% url 'contact'%}"><button style="background-color: #D48000; border: none;" type="button"
+                            class="btn btn-primary google-sheet py-2 px-3">聯絡我們</button></a>
+                    <p class="lh-lg fw-lighter mt-3" style="color: rgb(148, 148, 148);">購買產品請與我們聯絡，野聲專員會盡快與您聯絡</p>
+                </div>
             </div>
         </div>
     </section>
@@ -46,12 +49,12 @@
 
                             {% for i in trailCamPro.acc.all %}
                             <div class="card border-light m-5" style="max-width: 1000px;">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="{{i.img.url}}" alt="{{i}}" style="max-width: 250px;">
+                                <div class="row g-0 d-flex flex-wrap">
+                                    <div class="col-md-4 p-4">
+                                        <img src="{{i.img.url}}" alt="{{i}}" class="img-fluid">
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="card-body m-5">
+                                        <div class="card-body card-for-mobile">
                                             <h4 class="fw-lighter" style="color: #D48000;">{{i}}</h4>
                                             <br>
                                             <p class="lh-lg fw-lighter">{{i.intro}}</p>
@@ -203,8 +206,7 @@
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
                         <div>
-
-                            <div class="d-flex flex=wrap p-4">
+                            <div class="d-flex flex-wrap p-4">
                                 <div class="m-4">
                                     <div class="card-body">
                                         <h3>日間範例影像</h3>
@@ -212,7 +214,7 @@
                                     <iframe width="560" height="315" src="{{trailCamPro.demoVedioDay}}"
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen class="rounded"></iframe>
+                                        allowfullscreen class="rounded youtube-for-mobile"></iframe>
                                 </div>
 
                                 <div class="m-4">
@@ -222,7 +224,7 @@
                                     <iframe width="560" height="315" src="{{trailCamPro.demoVedioNight}}"
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen class="rounded"></iframe>
+                                        allowfullscreen class="rounded youtube-for-mobile"></iframe>
                                 </div>
                             </div>
                         </div>
