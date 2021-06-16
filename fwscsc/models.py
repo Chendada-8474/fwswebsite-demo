@@ -85,7 +85,7 @@ class TrailCamPro(md.Model):
         return str(self.brand) + " " + self.ab
 
 class Department(md.Model):
-    department = md.TextField(max_length=15, null=True)
+    department = md.CharField(max_length=15, null=True)
 
     def __str__(self) -> str:
         return self.department
