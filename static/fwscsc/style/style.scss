@@ -33,6 +33,21 @@ nav {
   }
 }
 
+button.bottom-nav {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease !important;
+}
+button.bottom-nav:hover {
+  color: $theme-color;
+}
+
+button.bottom-nav:focus {
+  color: white;
+}
+
 .toWhite {
   background-color: rgba(0,0,0,0);
   border: none;

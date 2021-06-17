@@ -26,6 +26,23 @@ nav div ul a.active {
   color: #d48000 !important;
 }
 
+button.bottom-nav {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: all 0.5s ease !important;
+  transition: all 0.5s ease !important;
+}
+
+button.bottom-nav:hover {
+  color: #d48000;
+}
+
+button.bottom-nav:focus {
+  color: white;
+}
+
 .toWhite {
   background-color: rgba(0, 0, 0, 0);
   border: none;

@@ -73,19 +73,29 @@
               aria-controls="offcanvasTop">器材產品</button>
             <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel"
               style="visibility: hidden;" aria-hidden="true">
-              <div class="offcanvas-header">
+              <div class="offcanvas-header ps-5 pt-4 pb-1">
                 <h4 id="offcanvasTopLabel">器材產品</h4>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                  aria-label="Close"></button>
               </div>
-              <div class="offcanvas-body">
-                <div class="brand-atag container">
-                  <h5><a href="{% url 'trailCam'%}">紅外線自動相機</a></h5>
+              <div class="offcanvas-body container d-flex flex-wrap justify-content-between overflow-auto">
+                <div class="brand-atag">
+                  <h5 class="mb-3"><a href="{% url 'trailCam'%}">紅外線自動相機</a></h5>
                   <ul class="brand-atag">
                     {% for i in trailCamBrand%}
                     <li class="m-1"><a class="fs-6" href="{% url 'trailCam'%}#{{i.id}}">{{i}}</a></li>
                     {% endfor %}
                   </ul>
+                </div>
+                <div class="brand-atag">
+                  <h5><a href="#">排程錄音機</a></h5>
+                </div>
+                <div class="brand-atag">
+                  <h5><a href="#">蝙蝠偵測器</a></h5>
+                </div>
+                <div class="brand-atag">
+                  <h5><a href="#">動物追蹤發報器</a></h5>
+                </div>
+                <div class="brand-atag">
+                  <h5><a href="#">其他各式調查器材</a></h5>
                 </div>
               </div>
             </div>
@@ -120,7 +130,26 @@
     <ul class="nav justify-content-center fs-5">
       <li class="nav-item"><a class="nav-link" href="{% url 'home'%}">首頁</a></li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+        <button class="nav-link bottom-nav" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+          aria-controls="offcanvasTop">器材產品</button>
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel"
+          style="visibility: hidden;" aria-hidden="true">
+          <div class="offcanvas-header">
+            <h4 id="offcanvasTopLabel">器材產品</h4>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="brand-atag container">
+              <h5><a href="{% url 'trailCam'%}">紅外線自動相機</a></h5>
+              <ul class="brand-atag">
+                {% for i in trailCamBrand%}
+                <li class="m-1"><a class="fs-6" href="{% url 'trailCam'%}#{{i.id}}">{{i}}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
           aria-expanded="false">
           器材產品
         </a>
@@ -130,7 +159,7 @@
           <li><a style="color: rgb(185, 185, 185);" class="nav-link dropdown-item" href="#">蝙蝠偵測器</a></li>
           <li><a style="color: rgb(185, 185, 185);" class="nav-link dropdown-item" href="#">動物追蹤發報器</a></li>
           <li><a style="color: rgb(185, 185, 185);" class="nav-link dropdown-item" href="#">各式其他進口器材</a></li>
-        </ul>
+        </ul> -->
       </li>
       <li class="nav-item"><a class="nav-link" href="#">生態調查</a></li>
       <li class="nav-item">
