@@ -80,10 +80,10 @@
               </div>
               <div class="offcanvas-body">
                 <div class="brand-atag container">
-                  <h5>紅外線自動相機</h5>
+                  <h5><a href="{% url 'trailCam'%}">紅外線自動相機</a></h5>
                   <ul class="brand-atag">
                     {% for i in trailCamBrand%}
-                    <li><a href="{% url 'trailCam'%}#{{i.id}}">{{i}}</a></li>
+                    <li class="m-1"><a class="fs-6" href="{% url 'trailCam'%}#{{i.id}}">{{i}}</a></li>
                     {% endfor %}
                   </ul>
                 </div>

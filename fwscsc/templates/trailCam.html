@@ -13,7 +13,7 @@
             <div class=" brand-bg rounded p-2" style="width: 210px;">
                 <a href="#ag" class="brand-link">代理品牌</a>
             </div>
-            {% for i in brands %}
+            {% for i in trailCamBrand %}
             <div class=" brand-bg rounded p-2" style="width: 210px;">
                 <a href="#{{i.id}}" class="brand-link">
                     {{i.brand}}
@@ -47,7 +47,7 @@
             </div>
             <div class="p-3">
                 <div class="d-flex align-items-center flex-wrap justify-content-between">
-                    {% for i in brands %}
+                    {% for i in trailCamBrand %}
                     <div class="m-4" style="max-width: 350px;">
                         <a href="#{{i.id}}"><img src="{{i.brandImg.url}}" alt="trialCamLogo"
                                 class="img-fluid brand-img" /></a>

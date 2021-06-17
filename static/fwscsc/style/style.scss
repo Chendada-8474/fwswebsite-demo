@@ -57,6 +57,15 @@ a.nav-link:hover {
 
 div.brand-atag {
   color: $grey-color;
+  h5 {
+    a {
+      text-decoration: none;
+      color: $grey-color;
+    }
+    a:hover {
+      color: $theme-color;
+    }
+  }
   ul.brand-atag {
     list-style-type: none;
     li {
@@ -300,7 +309,7 @@ div#openCam:hover img#opened {
   border: white !important;
 }
 
-.accordion-button {
+.accordion-item {
   border: 0px;
 }
 
