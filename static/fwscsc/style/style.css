@@ -22,19 +22,50 @@ nav a.navbar-brand {
   margin: 1rem;
 }
 
-nav div ul a {
+nav div ul a.active {
+  color: #d48000 !important;
+}
+
+.toWhite {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
   text-decoration: none;
   color: #7a7a7a;
   -webkit-transition: all 0.5s ease !important;
   transition: all 0.5s ease !important;
 }
 
-nav div ul a.active {
-  color: #d48000 !important;
+.toWhite:hover {
+  color: #d48000;
+}
+
+.toWhite:focus {
+  color: #7a7a7a;
+}
+
+a.stay-grey {
+  color: #7a7a7a;
 }
 
 a.nav-link:hover {
   color: #d48000 !important;
+}
+
+div.brand-atag {
+  color: #7a7a7a;
+}
+
+div.brand-atag ul.brand-atag {
+  list-style-type: none;
+}
+
+div.brand-atag ul.brand-atag li a {
+  color: #7a7a7a;
+  text-decoration: none;
+}
+
+div.brand-atag ul.brand-atag li a:hover {
+  color: #d48000;
 }
 
 section.first div.carousel-item {

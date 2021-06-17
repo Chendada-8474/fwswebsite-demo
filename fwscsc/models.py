@@ -21,7 +21,7 @@ class Accessories(md.Model):
         return str(self.supplier) + ' ' + self.fullName
 
 
-class Brands(md.Model):
+class TrailCamBrand(md.Model):
     brand = md.CharField('Brand', max_length=50, null=True)
     title = md.CharField('Title', max_length=50, null=True)
     subTitle = md.CharField('Subtitle', max_length=50, null=True)
@@ -33,7 +33,7 @@ class Brands(md.Model):
         return self.brand
 
 class TrailCamPro(md.Model):
-    brand = md.ForeignKey(Brands, on_delete=md.CASCADE, blank=True, null=True)
+    brand = md.ForeignKey(TrailCamBrand, on_delete=md.CASCADE, blank=True, null=True)
     ab = md.CharField('Abbreviation', max_length=10, null=True)
     # for brand page
     proImg = md.ImageField('Photo of product', null=True, blank=True, upload_to="proImgForBrands") # also can be used in product page

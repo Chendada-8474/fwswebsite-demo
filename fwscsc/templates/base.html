@@ -33,8 +33,9 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
   <link rel="stylesheet" href="{% static 'fwscsc/style/style.css'%}" />
 
 </head>
@@ -57,7 +58,7 @@
             <a class="nav-link toWhite" aria-current="page" href="{% url 'home'%}">首頁</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle toWhite" href="#" id="navbarDropdown" role="button"
+            <!-- <a class="nav-link dropdown-toggle toWhite" href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               器材產品
             </a>
@@ -67,7 +68,28 @@
               <li><a class="nav-link dropdown-item stay-grey" href="#">蝙蝠偵測器</a></li>
               <li><a class="nav-link dropdown-item stay-grey" href="#">動物追蹤發報器</a></li>
               <li><a class="nav-link dropdown-item stay-grey" href="#">各式其他進口器材</a></li>
-            </ul>
+            </ul> -->
+            <button class="nav-link toWhite" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+              aria-controls="offcanvasTop">器材產品</button>
+            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel"
+              style="visibility: hidden;" aria-hidden="true">
+              <div class="offcanvas-header">
+                <h4 id="offcanvasTopLabel">器材產品</h4>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                  aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="brand-atag container">
+                  <h5>紅外線自動相機</h5>
+                  <ul class="brand-atag">
+                    {% for i in trailCamBrand%}
+                    <li><a href="{% url 'trailCam'%}#{{i.id}}">{{i}}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </li>
           <li class="nav-item">
             <a class="nav-link toWhite" href="#">生態調查</a>
@@ -89,6 +111,7 @@
     </div>
   </nav>
 </header>
+
 
 {% block content %} {% endblock %}
 
@@ -129,8 +152,9 @@
       網頁設計｜陳達智</span>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 <script src="{% static 'fwscsc/style/stickyNav.js' %}"></script>
 

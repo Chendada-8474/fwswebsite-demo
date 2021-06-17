@@ -25,11 +25,7 @@ nav {
   }
   div {
     ul {
-      a {
-        text-decoration: none;
-        color: rgb(122, 122, 122);
-        transition: all 0.5s ease !important;
-      }
+
       a.active {
         color: $theme-color !important;
       }
@@ -37,9 +33,44 @@ nav {
   }
 }
 
+.toWhite {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  text-decoration: none;
+  color: rgb(122, 122, 122);
+  transition: all 0.5s ease !important;
+}
+.toWhite:hover {
+  color: $theme-color;
+}
+.toWhite:focus {
+  color: $grey-color;
+}
+
+a.stay-grey {
+  color: $grey-color;
+}
+
 a.nav-link:hover {
   color: $theme-color !important;
 }
+
+div.brand-atag {
+  color: $grey-color;
+  ul.brand-atag {
+    list-style-type: none;
+    li {
+      a {
+        color: $grey-color;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
 
 // 設定圖片縮放，並且不要讓他變形
 section.first {

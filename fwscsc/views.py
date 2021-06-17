@@ -1,18 +1,21 @@
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView, DetailView
-from .models import Brands, Department, TrailCamPro, Supplier, Accessories, Recruitment, Department
+from .models import TrailCamBrand, Department, TrailCamPro, Supplier, Accessories, Recruitment, Department
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html', {})
+    trailCamBrand = TrailCamBrand.objects.all()
+    return render(request, 'home.html', {'trailCamBrand':trailCamBrand, })
 
 
 def about(request):
-    return render(request, 'about.html', {})
+    trailCamBrand = TrailCamBrand.objects.all()
+    return render(request, 'about.html', {'trailCamBrand':trailCamBrand, })
 
 
 def recruitment(request):
+    trailCamBrand = TrailCamBrand.objects.all()
     recruitment = Recruitment.objects.all()
     department = Department.objects.all()
     classifiedRec = {}
@@ -21,19 +24,23 @@ def recruitment(request):
             classifiedRec[i.department] = []
         classifiedRec[i.department].append(i)
     return render(request, 'recruitment.html',
-    {'recruitment':recruitment, 'department':department, 'classifiedRec':classifiedRec})
+    {'trailCamBrand':trailCamBrand, 'recruitment':recruitment, 'department':department, 'classifiedRec':classifiedRec})
 
 
 def support(request):
-    return render(request, 'support.html', {})
+    trailCamBrand = TrailCamBrand.objects.all()
+    return render(request, 'support.html', {'trailCamBrand':trailCamBrand, })
 
 
 def contact(request):
-    return render(request, 'contact.html', {})
+    trailCamBrand = TrailCamBrand.objects.all()
+    return render(request, 'contact.html', {'trailCamBrand':trailCamBrand, })
+
+
 
 
 def trailCam(request):
-    brands = Brands.objects.all()
+    trailCamBrand = TrailCamBrand.objects.all()
     trailCamPro = TrailCamPro.objects.all()
     classifiedProd = {}
     for i in trailCamPro:
@@ -41,13 +48,14 @@ def trailCam(request):
             classifiedProd[i.brand] = []
         classifiedProd[i.brand].append(i)
 
-    return render(request, 'trailCam.html', {'brands':brands, 'classifiedProd':classifiedProd, 'trailCamPro':trailCamPro})
+    return render(request, 'trailCam.html', {'trailCamBrand':trailCamBrand, 'classifiedProd':classifiedProd, 'trailCamPro':trailCamPro})
 
 # class TrailCam(ListView):
 #     model = TrailCamPro
 
 def trailCamPro(request, id):
+    trailCamBrand = TrailCamBrand.objects.all()
     trailCamPro = TrailCamPro.objects.get(id = id)
-    return render(request, 'trailCamPro.html', {'trailCamPro': trailCamPro})
+    return render(request, 'trailCamPro.html', {'trailCamBrand':trailCamBrand, 'trailCamPro': trailCamPro})
 
 
